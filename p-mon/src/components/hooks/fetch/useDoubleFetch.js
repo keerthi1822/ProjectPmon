@@ -13,6 +13,7 @@ function useDoubleFetch(uri) {
       try {
         setLoading(true);
         await axios.get(uri).then((data) => {
+          console.log(data);
           setNext(data.data.next);
           setPrev(data.data.previous);
           const respones = data.data.results.map((item) => axios.get(item.url));

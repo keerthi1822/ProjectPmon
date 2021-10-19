@@ -1,0 +1,11 @@
+.pokemon-details-heading {
+  display: flex;
+  justify-content: space-between;
+}
+.pokemon-details-page {
+  display: flex;
+  justify-content: space-around;
+}
+.close-icon {
+  color: red;
+}
