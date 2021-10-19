@@ -1,0 +1,53 @@
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.card-Link {
+  margin: 1%;
+  /*  flex: 1 1 100px; */
+  box-sizing: border-box;
+  text-align: center;
+  border: 1px solid lightgray;
+  border-radius: 20px;
+  flex-basis: 12em;
+  background-color: white;
+  text-decoration: none;
+  color: black;
+}
+.pokeCardImg-group {
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  background-color: lightblue;
+}
+
+.card ul li,
+.card ul {
+  /* list-style: none; */
+  text-align: left;
+}
+
+.card span {
+  font-weight: 500;
+}
+
+.paginating-Links {
+  display: flex;
+  justify-content: space-around;
+}
+
+.paginating-Links * {
+  text-decoration: none;
+  border: 1px solid lightgray;
+  border-radius: 3px;
+  padding: 1%;
+  color: white;
+  background-color: lightblue;
+}
+.paginating-Links *:hover {
+  background-color: white;
+  color: lightblue;
+}

@@ -1,6 +1,8 @@
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Home from "../src/components/home/Home";
+import { BrowserRouter as Router } from "react-router-dom";
+/* import Home from "../src/components/home/Home"; */
 import "./App.css";
+/* import PokeDetails from "./components/P-cardDetails/PokeDetails"; */
+import MainRouter from "./Router";
 
 function App() {
   console.log(" tests are running");
@@ -10,9 +12,7 @@ function App() {
       </header> */}
 
       <Router>
-        <Switch>
-          <Route path="/" component={Home} exact />
-        </Switch>
+        <MainRouter />
       </Router>
     </div>
   );

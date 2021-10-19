@@ -1,11 +1,16 @@
 import React from "react";
-import useFetch from "../hooks/fetch/useFetch";
+/* import useFetch from "../hooks/fetch/useFetch"; */
+import { Cards } from "../cardsList/Cards";
 
 export const Home = () => {
-  let getUrlFromApi = useFetch();
+  /*  getUrlFromApi.data.map((item) => console.log(item)); */
 
-  console.log(getUrlFromApi);
-  return <div>H!!Om!!E {getUrlFromApi.data}</div>;
+  return (
+    <div>
+      H!!Om!!E
+      <Cards />
+    </div>
+  );
 };
 
 export default Home;
