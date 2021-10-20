@@ -1,52 +1,41 @@
 import React, { useState, useEffect } from "react";
-import { NavLink, useHistory, useParams } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 import useDoubleFetch from "../hooks/fetch/useDoubleFetch";
+import NextPrevBtns from "../pagination/NextPrevBtns";
+import CardsPerPageSelection from "../pagination/CardsPerPageSelection";
 import "./cards.css";
 
 export const Cards = () => {
-  const { page } = useParams();
   const [limit, setLimit] = useState(10);
   const [offset, setOffset] = useState(0);
-  const [pageNo, setPageNo] = useState(Number(page) || 1);
+
   const [nextUri, setnextUri] = useState(
     `https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`
   );
-  const history = useHistory();
-  /*    const uri = `https://pokeapi.co/api/v2/pokemon?limit=20&offset=20`; */
+
+  const setCardsPerPageValue = (inputLimit) => {
+    console.log(inputLimit);
+    setLimit(inputLimit);
+    console.log(limit);
+  };
 
   //calling useFetch hooks
   let { data, next, loading, error, prev } = useDoubleFetch(nextUri);
 
-  const handlePrevious = () => {
-    setPageNo(pageNo - 1);
-    setnextUri(prev);
-    if (pageNo <= 0) return;
-    history.push(`/page/${pageNo}`);
-  };
-  const handleNext = () => {
-    if (pageNo === 0) setPageNo(pageNo);
-    setPageNo(pageNo + 1);
-    setnextUri(next);
-    history.push(`/page/${pageNo}`);
-  };
-
-  useEffect(() => {}, []);
+  useEffect(() => {
+    setnextUri(
+      `https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`
+    );
+  }, [limit, offset]);
 
   return (
     <div>
-      <div className="paginating-Links">
-        {/* <NavLink to={`/page/${pageNo}`}>Previous</NavLink>
-        <NavLink to={`/page/${pageNo}`}>Next</NavLink> */}
-        {pageNo === 1 ? null : (
-          <button onClick={handlePrevious}>
-            <i class="fas fa-angle-left"></i>previous
-          </button>
-        )}
-        <button onClick={handleNext}>
-          next<i class="fas fa-angle-right"></i>
-        </button>
+      <div className="pagination-bar">
+        <CardsPerPageSelection setLimitValue={setCardsPerPageValue} />
+        <NextPrevBtns next={next} setnextUri={setnextUri} prev={prev} />
       </div>
+
       {loading ? (
         <p>Pokemons are Loading...</p>
       ) : (

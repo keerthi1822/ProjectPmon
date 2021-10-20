@@ -6,7 +6,6 @@ import Footer from "./components/footer/Footer";
 import "./App.css";
 
 function App() {
-  console.log(" tests are running");
   return (
     <div className="App">
       <Router>

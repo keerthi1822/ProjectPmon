@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams, useHistory } from "react-router-dom";
 
-import useFetch from "../hooks/useFetch";
+import useFetch from "../hooks/fetch/useFetch";
 
 import "./pokeDetails.css";
 

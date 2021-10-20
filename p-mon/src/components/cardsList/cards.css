@@ -37,6 +37,7 @@
 .paginating-Links {
   display: flex;
   justify-content: flex-end;
+  flex: 1 1 20%;
 }
 
 .paginating-Links button {
@@ -55,4 +56,19 @@
 .paginating-Links *:hover {
   background-color: white;
   color: lightblue;
+}
+.pagination-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.pagination-bar input,
+.pagination-bar select {
+  border: 1px solid lightblue;
+}
+.pagination-bar input:hover,
+.pagination-bar select:hover {
+  border: 1px solid black;
+  cursor: pointer;
 }
