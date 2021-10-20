@@ -6,7 +6,7 @@ import "./cards.css";
 
 export const Cards = () => {
   const { page } = useParams();
-  const [limit, setLimit] = useState(4);
+  const [limit, setLimit] = useState(10);
   const [offset, setOffset] = useState(0);
   const [pageNo, setPageNo] = useState(Number(page) || 1);
   const [nextUri, setnextUri] = useState(
@@ -35,6 +35,18 @@ export const Cards = () => {
 
   return (
     <div>
+      <div className="paginating-Links">
+        {/* <NavLink to={`/page/${pageNo}`}>Previous</NavLink>
+        <NavLink to={`/page/${pageNo}`}>Next</NavLink> */}
+        {pageNo === 1 ? null : (
+          <button onClick={handlePrevious}>
+            <i class="fas fa-angle-left"></i>previous
+          </button>
+        )}
+        <button onClick={handleNext}>
+          next<i class="fas fa-angle-right"></i>
+        </button>
+      </div>
       {loading ? (
         <p>Pokemons are Loading...</p>
       ) : (
@@ -76,15 +88,6 @@ export const Cards = () => {
             ))}
         </div>
       )}
-
-      <div className="paginating-Links">
-        {/* <NavLink to={`/page/${pageNo}`}>Previous</NavLink>
-        <NavLink to={`/page/${pageNo}`}>Next</NavLink> */}
-        {pageNo === 1 ? null : (
-          <button onClick={handlePrevious}>previous</button>
-        )}
-        <button onClick={handleNext}>next</button>
-      </div>
     </div>
   );
 };

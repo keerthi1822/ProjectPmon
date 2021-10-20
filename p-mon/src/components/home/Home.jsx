@@ -7,7 +7,7 @@ export const Home = () => {
 
   return (
     <div>
-      H!!Om!!E
+      {/* H!!Om!!E */}
       <Cards />
     </div>
   );

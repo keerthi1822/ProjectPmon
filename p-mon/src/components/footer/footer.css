@@ -1,0 +1,11 @@
+.social_icons {
+  padding: 3% 5%;
+  display: flex;
+  justify-content: space-evenly;
+  background-color: lightblue;
+}
+
+.social_icons a {
+  color: white;
+  text-decoration: none;
+}

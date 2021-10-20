@@ -36,17 +36,22 @@
 
 .paginating-Links {
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-end;
 }
 
-.paginating-Links * {
+.paginating-Links button {
   text-decoration: none;
   border: 1px solid lightgray;
   border-radius: 3px;
   padding: 1%;
+  margin: 1%;
   color: white;
   background-color: lightblue;
 }
+.paginating-Links button i {
+  margin: 0 5px;
+}
+
 .paginating-Links *:hover {
   background-color: white;
   color: lightblue;
