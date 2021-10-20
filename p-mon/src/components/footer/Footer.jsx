@@ -32,7 +32,7 @@ const Footer = () => {
         </a>
         <a href="tel:+4591734906" rel="noreferrer" title="call keerthi">
           {" "}
-          <i class="fas fa-phone-square-alt"></i>
+          <i className="fas fa-phone-square-alt"></i>
         </a>
 
         <a

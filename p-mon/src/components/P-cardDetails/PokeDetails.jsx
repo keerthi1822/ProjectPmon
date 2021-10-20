@@ -6,7 +6,6 @@ import useFetch from "../hooks/fetch/useFetch";
 import "./pokeDetails.css";
 
 const PokeDetails = () => {
-  /*  const [updateData, setUpdateData] = useState(JSON.stringify(data, null, 2)); */
   const { name } = useParams();
   const history = useHistory();
 

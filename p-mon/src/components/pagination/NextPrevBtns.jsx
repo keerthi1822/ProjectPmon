@@ -24,11 +24,11 @@ const NextPrevBtns = ({ next, setnextUri, prev }) => {
         <NavLink to={`/page/${pageNo}`}>Next</NavLink> */}
         {pageNo === 1 ? null : (
           <button onClick={handlePrevious}>
-            <i class="fas fa-angle-left"></i>previous
+            <i className="fas fa-angle-left"></i>previous
           </button>
         )}
         <button onClick={handleNext}>
-          next<i class="fas fa-angle-right"></i>
+          next<i className="fas fa-angle-right"></i>
         </button>
       </div>
     </>

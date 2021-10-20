@@ -17,6 +17,9 @@
   text-decoration: none;
   color: black;
 }
+.card-Link:hover {
+  box-shadow: 0 0 5px rgb(185, 186, 187);
+}
 .pokeCardImg-group {
   border-radius: 20px;
   display: flex;
