@@ -1,6 +1,5 @@
 import React from "react";
 import "./footer.css";
-import keerthiResume from "../../../src/asserts/KeerthiCV.pdf";
 
 const Footer = () => {
   return (
@@ -36,7 +35,7 @@ const Footer = () => {
         </a>
 
         <a
-          href="KeerthiCV.pdf"
+          href="/KeerthiCV.pdf"
           download="KeerthiCV.pdf"
           rel="noreferrer"
           title="click for resume"
