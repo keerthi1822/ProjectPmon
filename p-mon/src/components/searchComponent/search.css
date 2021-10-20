@@ -1,0 +1,37 @@
+.search-group {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  border: 1px solid lightblue;
+  border-radius: 5px;
+  padding: 0 5px;
+}
+.search-group select,
+.search-group input {
+  border: none;
+}
+
+.search-group i {
+  color: lightblue;
+}
+.search-group select:hover,
+.search-group input:hover {
+  /*   border: 1px solid lightblue; */
+
+  cursor: pointer;
+}
+input:focus,
+select:focus {
+  outline: none;
+}
+
+.search-page {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+}
+/* .search-page .card {
+  border: 1px solid lightblue;
+  border-radius: 20px;
+} */

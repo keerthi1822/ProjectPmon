@@ -1,9 +1,18 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
+import Search from "../searchComponent/Search";
+
+import "./navigation.css";
 
 const Navigation = () => {
   return (
-    <div>
-      <h1>P-mon</h1>
+    <div className="Nav-group">
+      <NavLink to="/page/1" className="home-Logo">
+        {" "}
+        H!!Om!!E
+      </NavLink>
+
+      <Search />
     </div>
   );
 };

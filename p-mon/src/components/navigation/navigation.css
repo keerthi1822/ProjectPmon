@@ -1,0 +1,19 @@
+.Nav-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 5px;
+}
+
+.Nav-group h1 {
+  margin: 0;
+}
+
+.home-Logo {
+  text-decoration: none;
+  background-color: white;
+  color: lightblue;
+  font-size: 1.2em;
+  font-weight: bold;
+}

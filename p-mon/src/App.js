@@ -1,3 +1,4 @@
+import React from "react";
 import { BrowserRouter as Router, NavLink } from "react-router-dom";
 import MainRouter from "./Router";
 import Navigation from "./components/navigation/Navigation";
@@ -11,7 +12,6 @@ function App() {
       <Router>
         <header className="App-header">
           <Navigation />
-          <NavLink to="/page/1">H!!Om!!E</NavLink>
         </header>
 
         <MainRouter />

@@ -1,12 +1,23 @@
-import React, { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import React, { useState, useEffect, useContext } from "react";
+import { NavLink, useHistory } from "react-router-dom";
 
 import useDoubleFetch from "../hooks/fetch/useDoubleFetch";
 import NextPrevBtns from "../pagination/NextPrevBtns";
 import CardsPerPageSelection from "../pagination/CardsPerPageSelection";
+import Card from "./Card";
+
+import { SearchContext } from "../../Context";
+
 import "./cards.css";
 
 export const Cards = () => {
+  // useContext
+  const search = useContext(SearchContext);
+
+  const searchPath = `${search.searchBy}/${search.searchText}`;
+
+  const middlePath = search.searchText !== "" ? `${searchPath}` : `pokemon`;
+
   const [limit, setLimit] = useState(10);
   const [offset, setOffset] = useState(0);
 
@@ -27,7 +38,7 @@ export const Cards = () => {
     setnextUri(
       `https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`
     );
-  }, [limit, offset]);
+  }, [limit, offset, middlePath]);
 
   return (
     <div>
@@ -40,41 +51,7 @@ export const Cards = () => {
         <p>Pokemons are Loading...</p>
       ) : (
         <div className="cards">
-          {data &&
-            data.map(({ data }) => (
-              <NavLink
-                to={`/pokemon/${data.name}`}
-                className="card-Link"
-                key={data.id}
-              >
-                <div key={data.id} className="card">
-                  <div className="pokeCardImg-group">
-                    <img
-                      width="50"
-                      src={data.sprites.other["official-artwork"].front_default}
-                      alt={data.name}
-                    />
-                    <p>{data.name}</p>
-                  </div>
-
-                  <p>
-                    <span>Height:</span>
-                    {data.height}
-                  </p>
-                  <p>
-                    <span>Weight:</span>
-                    {data.weight}
-                  </p>
-
-                  <ul>
-                    <span>Abilities:</span>
-                    {data.abilities.map((ability) => (
-                      <li key={ability.ability.name}>{ability.ability.name}</li>
-                    ))}
-                  </ul>
-                </div>
-              </NavLink>
-            ))}
+          {data && data.map(({ data }) => <Card data={data} />)}
         </div>
       )}
     </div>
