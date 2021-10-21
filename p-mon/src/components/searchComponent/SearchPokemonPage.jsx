@@ -30,7 +30,7 @@ const SearchPokemonPage = ({ searchby, searchtext }) => {
             <i
               className="fas fa-window-close close-icon"
               onClick={() => {
-                history.push("/");
+                history.goBack();
               }}
             ></i>
           </section>

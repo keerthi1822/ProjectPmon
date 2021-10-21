@@ -1,5 +1,3 @@
-import { useEffect } from "react";
-
 const sortByArray = ["name", "weight", "height"];
 
 const Sort = ({ setSortBy }) => {

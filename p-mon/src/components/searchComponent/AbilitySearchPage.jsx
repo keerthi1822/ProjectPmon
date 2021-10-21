@@ -27,7 +27,7 @@ const AbilitySearchPage = ({ searchby, searchtext }) => {
 
             <i
               className="fas fa-window-close close-icon"
-              onClick={() => history.push("/")}
+              onClick={() => history.goBack()}
             ></i>
           </section>
           {data ? (
