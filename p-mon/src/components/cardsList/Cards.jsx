@@ -38,13 +38,19 @@ export const Cards = () => {
     setnextUri(
       `https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`
     );
-  }, [limit, offset, middlePath]);
+  }, [limit, offset]);
 
   return (
     <div>
       <div className="pagination-bar">
         <CardsPerPageSelection setLimitValue={setCardsPerPageValue} />
-        <NextPrevBtns next={next} setnextUri={setnextUri} prev={prev} />
+        <NextPrevBtns
+          next={next}
+          setnextUri={setnextUri}
+          prev={prev}
+          limit={limit}
+          setOffset={setOffset}
+        />
       </div>
 
       {loading ? (

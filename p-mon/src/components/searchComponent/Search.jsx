@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState /* , useContext  */ } from "react";
 import { NavLink, useHistory } from "react-router-dom";
 /* import { SearchContext } from "../../Context"; */
 
@@ -10,7 +10,7 @@ const Search = () => {
 
   const history = useHistory();
   // Retrieve context data
-  /* const searchData = useContext(SearchContext); */
+  /*   const searchData = useContext(SearchContext); */
 
   const handleKeyPress = (event) => {
     if (event.key === "Enter") {
@@ -42,7 +42,7 @@ const Search = () => {
         placeholder={
           searchBy === "ability"
             ? "Pokemon ability"
-            : searchBy === "ability"
+            : searchBy === "pokemon"
             ? "Pokemon name"
             : "select search by"
         }

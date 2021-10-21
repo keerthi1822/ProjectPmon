@@ -40,7 +40,10 @@ const Footer = () => {
           rel="noreferrer"
           title="click for resume"
         >
-          <i>Keerthika Devi Alampalli </i>
+          <i>
+            Keerthika Devi Alampalli{" "}
+            <i className="fas fa-cloud-download-alt"></i>
+          </i>
         </a>
       </section>
     </>

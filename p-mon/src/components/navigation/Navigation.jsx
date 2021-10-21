@@ -7,7 +7,7 @@ import "./navigation.css";
 const Navigation = () => {
   return (
     <div className="Nav-group">
-      <NavLink to="/page/1" className="home-Logo">
+      <NavLink to="/page/0" className="home-Logo">
         {" "}
         H!!Om!!E
       </NavLink>

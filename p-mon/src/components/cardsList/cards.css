@@ -10,7 +10,7 @@
   box-sizing: border-box;
   text-align: center;
   border: 1px solid lightgray;
-  border-radius: 20px;
+  /*  border-radius: 20px; */
   flex-basis: 12em;
   background-color: white;
   text-decoration: none;
@@ -20,7 +20,7 @@
   box-shadow: 0 0 5px rgb(185, 186, 187);
 }
 .pokeCardImg-group {
-  border-radius: 20px;
+  /* border-radius: 20px; */
   display: flex;
   justify-content: center;
   background-color: lightblue;
@@ -28,8 +28,9 @@
 
 .card ul li,
 .card ul {
-  /* list-style: none; */
-  text-align: left;
+  list-style: none;
+  text-align: center;
+  padding-left: 0;
 }
 
 .card span {
