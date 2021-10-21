@@ -1,13 +1,14 @@
 import React, { useState, useEffect, useContext } from "react";
-import { NavLink, useHistory } from "react-router-dom";
 
-import useDoubleFetch from "../hooks/fetch/useDoubleFetch";
-import NextPrevBtns from "../pagination/NextPrevBtns";
-import CardsPerPageSelection from "../pagination/CardsPerPageSelection";
 import Card from "./Card";
 
-import { SearchContext } from "../../Context";
+import PaginationBar from "../pagination/PaginationBar";
+// hooks
+import useDoubleFetch from "../hooks/fetch/useDoubleFetch";
 
+//Context
+import { SearchContext } from "../../Context";
+// css
 import "./cards.css";
 
 export const Cards = () => {
@@ -26,9 +27,7 @@ export const Cards = () => {
   );
 
   const setCardsPerPageValue = (inputLimit) => {
-    console.log(inputLimit);
     setLimit(inputLimit);
-    console.log(limit);
   };
 
   //calling useFetch hooks
@@ -42,16 +41,14 @@ export const Cards = () => {
 
   return (
     <div>
-      <div className="pagination-bar">
-        <CardsPerPageSelection setLimitValue={setCardsPerPageValue} />
-        <NextPrevBtns
-          next={next}
-          setnextUri={setnextUri}
-          prev={prev}
-          limit={limit}
-          setOffset={setOffset}
-        />
-      </div>
+      <PaginationBar
+        setLimitValue={setCardsPerPageValue}
+        next={next}
+        setnextUri={setnextUri}
+        prev={prev}
+        limit={limit}
+        setOffset={setOffset}
+      />
 
       {loading ? (
         <p>Pokemons are Loading...</p>
