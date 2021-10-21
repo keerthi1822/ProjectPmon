@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, NavLink } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import MainRouter from "./Router";
 import Navigation from "./components/navigation/Navigation";
 import Footer from "./components/footer/Footer";

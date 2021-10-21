@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 function useDoubleFetch(uri) {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState();
   const [next, setNext] = useState("");
   const [prev, setPrev] = useState("");
   const [loading, setLoading] = useState(null);
