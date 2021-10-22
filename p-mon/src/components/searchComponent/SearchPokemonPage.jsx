@@ -28,12 +28,10 @@ const SearchPokemonPage = ({ searchby, searchtext }) => {
                 style={{ color: "lightblue" }}
               >{`${searchby} = ${searchtext}`}</span>
             </h2>
-
+            <i class="fas fa-arrow-left"></i>
             <i
-              className="fas fa-window-close close-icon"
+              className="fas fa-arrow-left back-icon"
               onClick={() => {
-                searchValueToContext.setSearchBy("");
-                searchValueToContext.setSearchText("");
                 history.goBack();
               }}
             ></i>

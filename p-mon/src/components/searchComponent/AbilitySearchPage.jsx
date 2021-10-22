@@ -1,9 +1,8 @@
-import React, { useContext } from "react";
+import React from "react";
 import { useHistory } from "react-router-dom";
 
 import useSearchFetch from "../hooks/fetch/useSearchFetch";
 import Card from "../cardsList/Card";
-import { SearchContext } from "../../Context";
 
 const AbilitySearchPage = ({ searchby, searchtext }) => {
   const history = useHistory();
@@ -11,8 +10,6 @@ const AbilitySearchPage = ({ searchby, searchtext }) => {
   const { data, loading } = useSearchFetch(
     `https://pokeapi.co/api/v2/${searchby}/${searchtext}`
   );
-  const searchValueToContext = useContext(SearchContext);
-  console.log(searchValueToContext);
 
   return (
     <div>
@@ -30,10 +27,8 @@ const AbilitySearchPage = ({ searchby, searchtext }) => {
             </h2>
 
             <i
-              className="fas fa-window-close close-icon"
+              className="fas fa-arrow-left back-icon"
               onClick={() => {
-                searchValueToContext.setSearchBy("");
-                searchValueToContext.setSearchText("");
                 history.goBack();
               }}
             ></i>

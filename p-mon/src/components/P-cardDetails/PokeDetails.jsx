@@ -26,7 +26,7 @@ const PokeDetails = () => {
             <h2>{name}</h2>
 
             <i
-              className="fas fa-window-close close-icon"
+              className="fas fa-arrow-left back-icon"
               onClick={() => history.goBack()}
             ></i>
           </section>

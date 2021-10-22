@@ -57,7 +57,7 @@ const Search = () => {
         }
         onChange={(e) => {
           /* setSearchText(e.target.value.toLowerCase()); */
-          searchDataToContext.setSearchText(e.target.value);
+          searchDataToContext.setSearchText(e.target.value.toLowerCase());
         }}
         onKeyPress={handleKeyPress}
       ></input>

@@ -1,4 +1,4 @@
-const sortByArray = ["name", "weight", "height"];
+const sortByArray = ["Name", "Weight", "Height"];
 
 const Sort = ({ setSortBy }) => {
   const handleSort = (e) => {
@@ -7,13 +7,12 @@ const Sort = ({ setSortBy }) => {
 
   return (
     <div>
-      Sort
       <select className="" onChange={handleSort}>
         <option value="" defaultValue>
-          sort by..
+          sort pokemons by..
         </option>
         {sortByArray.map((item, i) => (
-          <option key={i} value={item}>
+          <option key={i} value={item.toLowerCase()}>
             {item}
           </option>
         ))}

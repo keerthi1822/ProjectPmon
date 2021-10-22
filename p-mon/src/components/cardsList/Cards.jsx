@@ -36,8 +36,6 @@ export const Cards = () => {
       ? a.data[sortBy].localeCompare(b.data[sortBy])
       : a.data[sortBy] - b.data[sortBy];
 
-  /*   console.log(data.sort((a, b) => a.data.sortBy - b.data.sortBy)); */
-
   return (
     <div>
       <PaginationBar
@@ -55,7 +53,9 @@ export const Cards = () => {
       ) : (
         <div className="cards">
           {data ? (
-            data.sort(compare).map(({ data }) => <Card data={data} />)
+            data
+              .sort(compare)
+              .map(({ data }) => <Card data={data} key={data.id} />)
           ) : (
             <p>Pokemons not found </p>
           )}

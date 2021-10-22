@@ -3,10 +3,8 @@ import { useHistory, useParams } from "react-router-dom";
 
 const NextPrevBtns = ({ next, setnextUri, prev, limit, setOffset }) => {
   const { page } = useParams();
-  /* setOffset(limit * Number(page)); */
-  /* console.log(page); */
   const history = useHistory();
-  const [pageNo, setPageNo] = useState(Number(page) || 0);
+  const [pageNo, setPageNo] = useState(0 || Number(page));
 
   const handlePrevious = () => {
     const pageNo = Number(page) - 1;

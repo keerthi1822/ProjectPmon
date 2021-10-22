@@ -3,6 +3,7 @@
   display: flex;
   justify-content: space-evenly;
   background-color: lightblue;
+  flex-wrap: wrap;
 }
 
 .social_icons a {
