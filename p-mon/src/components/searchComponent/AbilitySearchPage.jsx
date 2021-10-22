@@ -1,19 +1,23 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useHistory } from "react-router-dom";
 
 import useSearchFetch from "../hooks/fetch/useSearchFetch";
 import Card from "../cardsList/Card";
+import { SearchContext } from "../../Context";
 
 const AbilitySearchPage = ({ searchby, searchtext }) => {
   const history = useHistory();
+
   const { data, loading } = useSearchFetch(
     `https://pokeapi.co/api/v2/${searchby}/${searchtext}`
   );
+  const searchValueToContext = useContext(SearchContext);
+  console.log(searchValueToContext);
 
   return (
     <div>
       {loading ? (
-        `${searchby}/${searchtext} details are loading...`
+        `${searchby} = ${searchtext} pokemons are loading...`
       ) : (
         <div>
           <section className="Search-heading">
@@ -27,18 +31,21 @@ const AbilitySearchPage = ({ searchby, searchtext }) => {
 
             <i
               className="fas fa-window-close close-icon"
-              onClick={() => history.goBack()}
+              onClick={() => {
+                searchValueToContext.setSearchBy("");
+                searchValueToContext.setSearchText("");
+                history.goBack();
+              }}
             ></i>
           </section>
           {data ? (
             <div className="search-page">
               {data.map((item) => (
                 <Card data={item.data} />
-                /*  <p>{item.data.height}</p> */
               ))}
             </div>
           ) : (
-            "data not available"
+            "Pokemons not available"
           )}
         </div>
       )}

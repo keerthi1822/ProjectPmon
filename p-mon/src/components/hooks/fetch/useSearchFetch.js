@@ -18,6 +18,7 @@ function useSearchFetch(uri) {
           Promise.all(respones).then((fetchedItems) => {
             setLoading(false);
             setData(fetchedItems);
+            console.log(fetchedItems);
           });
         });
       } catch (error) {

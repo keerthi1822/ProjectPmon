@@ -1,24 +1,14 @@
-import React, { useState, useEffect, useContext } from "react";
-import { NavLink, useHistory } from "react-router-dom";
+import React, { useState, useEffect } from "react";
 import Card from "./Card";
 import Sort from "../sortComponent/Sort";
 import PaginationBar from "../pagination/PaginationBar";
 // hooks
 import useDoubleFetch from "../hooks/fetch/useDoubleFetch";
 
-//Context
-import { SearchContext } from "../../Context";
 // css
 import "./cards.css";
 
 export const Cards = () => {
-  // useContext
-  const search = useContext(SearchContext);
-
-  const searchPath = `${search.searchBy}/${search.searchText}`;
-
-  const middlePath = search.searchText !== "" ? `${searchPath}` : `pokemon`;
-
   const [limit, setLimit] = useState(10);
   const [offset, setOffset] = useState(0);
   const [sortBy, setSortBy] = useState();
@@ -32,7 +22,7 @@ export const Cards = () => {
   };
 
   //calling useFetch hooks
-  let { data, next, loading, error, prev } = useDoubleFetch(nextUri);
+  let { data, next, loading, prev } = useDoubleFetch(nextUri);
 
   useEffect(() => {
     setnextUri(
@@ -67,7 +57,7 @@ export const Cards = () => {
           {data ? (
             data.sort(compare).map(({ data }) => <Card data={data} />)
           ) : (
-            <p>data not found</p>
+            <p>Pokemons not found </p>
           )}
         </div>
       )}

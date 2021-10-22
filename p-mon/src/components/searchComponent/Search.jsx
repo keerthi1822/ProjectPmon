@@ -1,23 +1,29 @@
-import React, { useState /* , useContext  */ } from "react";
+import React, { /* useState,  */ useContext } from "react";
 import { NavLink, useHistory } from "react-router-dom";
-/* import { SearchContext } from "../../Context"; */
+import { SearchContext } from "../../Context";
 
 import "./search.css";
 
 const Search = () => {
-  const [searchBy, setSearchBy] = useState("");
-  const [searchText, setSearchText] = useState("");
+  /* const [searchBy, setSearchBy] = useState("");
+  const [searchText, setSearchText] = useState(""); */
 
   const history = useHistory();
-  // Retrieve context data
-  /*   const searchData = useContext(SearchContext); */
+
+  // send/update data in context
+  const searchDataToContext = useContext(SearchContext);
 
   const handleKeyPress = (event) => {
     if (event.key === "Enter") {
-      if (searchBy === "") alert("please select from search by");
-      else if (searchText === "")
-        alert(`please enter an ${searchBy} to search`);
-      else history.push(`/search/${searchBy}/${searchText}`);
+      // using data from context just updated with on click
+      if (searchDataToContext.searchBy === "")
+        alert("please select from search by");
+      else if (searchDataToContext.searchText === "")
+        alert(`please enter an ${searchDataToContext.searchBy} to search`);
+      else
+        history.push(
+          `/search/${searchDataToContext.searchBy}/${searchDataToContext.searchText}`
+        );
     }
   };
 
@@ -25,7 +31,10 @@ const Search = () => {
     <div className="search-group">
       <select
         className=""
-        onChange={(e) => setSearchBy(e.target.value)}
+        onChange={(e) => {
+          /*  setSearchBy(e.target.value); */
+          searchDataToContext.setSearchBy(e.target.value);
+        }}
         onKeyPress={handleKeyPress}
       >
         <option value="" defaultValue>
@@ -40,16 +49,21 @@ const Search = () => {
       <input
         type="text"
         placeholder={
-          searchBy === "ability"
+          searchDataToContext.searchBy === "ability"
             ? "Pokemon ability"
-            : searchBy === "pokemon"
+            : searchDataToContext.searchBy === "pokemon"
             ? "Pokemon name"
             : "select search by"
         }
-        onChange={(e) => setSearchText(e.target.value.toLowerCase())}
+        onChange={(e) => {
+          /* setSearchText(e.target.value.toLowerCase()); */
+          searchDataToContext.setSearchText(e.target.value);
+        }}
         onKeyPress={handleKeyPress}
       ></input>
-      <NavLink to={`/search/${searchBy}/${searchText}`}>
+      <NavLink
+        to={`/search/${searchDataToContext.searchBy}/${searchDataToContext.searchText}`}
+      >
         <i className="fas fa-search"></i>
       </NavLink>
     </div>
