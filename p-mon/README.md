@@ -23,17 +23,19 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ## Next and previous button in Pagination (Pagination)
 
-## pokemon page display on click on cards. (P-cardDetails)
+## Pokemon page display on click on cards. (P-cardDetails)
 
 ## Search on 'ability' and pokemon 'name' (Search component)
 
-## search stays on refresh (using 'useParams' and router)
+## Search stays on refresh 
 
-## page stays on refresh
+## Page stays on refresh 
 
 ## Select number of cards to display ( dynamic select 10,20,50 card per page)
 
 ## Sort card by name, height and weight.
+
+## Enter key navigation in search form
 
 ### Tasks not covered
 
