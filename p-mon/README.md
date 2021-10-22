@@ -4,7 +4,9 @@ In the project directory, you can run:
 
 ### ProjectPmon
 
-## Clone the Project to your Local system
+### This project is developed using React,Javascript and CSS
+
+## Clone the Project to your Local system ( do git clone https://github.com/keerthi1822/ProjectPmon.git in any terminal in the desired folder)
 
 ## get in to the right folder (p-mon)
 
@@ -25,4 +27,14 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ## Search on 'ability' and pokemon 'name' (Search component)
 
-## search and page refresh (using 'useParams' and router)
+## search stays on refresh (using 'useParams' and router)
+
+## page stays on refresh
+
+## Select number of cards to display ( dynamic select 10,20,50 card per page)
+
+## Sort card by name, height and weight.
+
+### Tasks not covered
+
+## unit tests
