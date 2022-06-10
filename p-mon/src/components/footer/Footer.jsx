@@ -35,8 +35,8 @@ const Footer = () => {
         </a>
 
         <a
-          href="/KeerthiCV.pdf"
-          download="KeerthiCV.pdf"
+          href="/Keerthika'sResume.pdf"
+          download="Keerthika'sResume.pdf"
           rel="noreferrer"
           title="click for resume"
         >

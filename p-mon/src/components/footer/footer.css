@@ -4,6 +4,10 @@
   justify-content: space-evenly;
   background-color: lightblue;
   flex-wrap: wrap;
+  position: fixed;
+  bottom:0;
+  right: 0;
+  width: 100%;
 }
 
 .social_icons a {
